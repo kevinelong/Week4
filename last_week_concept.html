@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+</head>
+<body>
+    
+    <main id="cool">
+        <div id="content">
+            <input id="rectangleWidth" placeholder="width">
+            <input id="rectangleLength" placeholder="height">
+            <button id="calculateAreaButton">Calc</button> 
+            <input id="areaResult" readonly placeholder="area">           
+        </div>
+    </main>
+
+    
+</body>
+<script>
+    
+    function area(width, length){
+        return width * length;
+    }
+
+    function calculateArea(){
+        const width = Number(rectangleWidth.value)        
+        const length = Number(rectangleLength.value)
+        // result = w * l;
+        const result = area(width, length);
+        areaResult.value = result;  
+    }
+    calculateAreaButton.onclick = calculateArea;
+</script>
+</html>
