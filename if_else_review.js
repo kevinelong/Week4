@@ -1,11 +1,12 @@
 // OVERVIEW
-// CONDITIONAL STATMENT IS IF/ELSE/ELSE_IF
-// THey use a BOOLEAN Expression
+
+// CONDITIONAL STATMENT IS IF/ELSE/ELSE_IF AKA BRANCHING
+// They use a BOOLEAN Expression
 // A Boolean is anything that boils down to TRUE or FALSE
 // We use LOGICAL OPERATORS to create a boolean expression
 
 // Common LOGICAL OPERATORS include:
-//  == EQUALS
+// == EQUALS of in JS ALSO === (same value and same data type)
 // >= GREATER THAN OR EQUAL TO
 // <= LESS THAN OR EQUAL TO
 // != NOT EQUAL
@@ -17,6 +18,7 @@
 console.log( 123 >= 12) //true
 console.log( 123 <= 12) //false
 
+// dont use var, its weird and wishy washy and oldschool
 const LIMIT = 18 //A TRUE CONSTANT
 let age = 25 //VARRIES PERSON TO PERSON
 
@@ -70,3 +72,14 @@ if(cookies || candy || fruit){ //CAN BE ANY OF THE THREE
 }else{
     console.log("GO HUNGRY =-(")
 }
+
+console.log( 1 == 1 ) // true
+console.log( 1 == "1" ) //weird coin toss
+console.log( 1 === "1" ) // same value and same datatype
+console.log(undefined == true);
+console.log(undefined == false);
+console.log(0 == true)
+console.log(0 == false)
+console.log(1 == true)
+console.log(1 == false)
+

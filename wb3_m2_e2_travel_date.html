@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #message{
+            font-size: 75%;
+        }
+        main{
+            border: 2px solid black;
+            padding: 1.25em;
+            margin: 1.25em;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        h4{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h4> Travel Date: </h4><br>
+        <input type="date" id="dt">
+        <input type="submit" id="b"> <br>
+        <div id="message">Your trip is in <span id="n">0</span> days</div>
+    </main>
+</body>
+<script>
+    function convertToUTC(date){
+        return new Date(
+            date.getUTCFullYear(),
+            date.getUTCMonth(),
+            date.getUTCDate(),
+            date.getUTCHours(),
+            date.getUTCMinutes(),
+            date.getUTCSeconds(),
+            date.getUTCMilliseconds()
+        );
+    }
+    function displayDays(){
+        debugger
+        //hours in day time minutes in hour times seconds in a mnute time milleseconds in a second
+        const secondsInADay = (24 * 60 * 60 * 1000); 
+        const currentTime = (new Date()).getTime();
+        const rawDate = new Date(dt.value)
+        const converted = convertToUTC(rawDate)
+        const travelTime = converted.getTime();
+        const timeDifference = travelTime - currentTime;
+        const days = timeDifference / secondsInADay; //convert milliseconds to seconds
+        const rounded = days.toFixed(0)
+        n.innerText = rounded;
+    }
+    b.onclick = displayDays;
+    
+</script>
+</html>
